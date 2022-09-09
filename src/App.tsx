@@ -1,11 +1,36 @@
-import { FunctionComponent } from "react";
-import Header from './components/Header';
-import styles from '../styles/App.module.scss';
+import { FunctionComponent, useRef } from "react";
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 
 const App: FunctionComponent = () => {
+  const myHdr = useRef<HTMLDivElement>(null);
+  const myNav = useRef<HTMLDivElement>(null);
+
   return (
-    <Header />
-  )
-}
+    <div>
+      <Header headerRef={myHdr} />
+      <Navigation headerRef={myHdr} navRef={myNav} />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+    </div>
+  );
+};
+
+const Block: FunctionComponent = () => {
+  return (
+    <div
+      style={{
+        backgroundColor: "green",
+        height: 500,
+        width: 500,
+        margin: 20,
+      }}
+    ></div>
+  );
+};
 
 export default App;

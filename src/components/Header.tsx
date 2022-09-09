@@ -1,24 +1,26 @@
-import { FunctionComponent, useState } from "react";
-import { TypeAnimation } from 'react-type-animation';
-import styles from '../../styles/Header.module.scss';
-import Image from 'next/image';
-import leafGraphic from '../../public/leaf-graphic.webp';
-import titleList from '../../public/titles.json';
+import { FunctionComponent, RefObject } from "react";
+import { TypeAnimation } from "react-type-animation";
+import styles from "../../styles/Header.module.scss";
+import Image from "next/image";
+import leafGraphic from "../../public/leaf-graphic.webp";
+import titleList from "../../public/titles.json";
 
+interface HeaderProp {
+  headerRef: RefObject<HTMLDivElement>;
+}
 
-const Header: FunctionComponent = () => {
-
-  let titleSequence: (string|number)[] = [];
+const Header: FunctionComponent<HeaderProp> = ({ headerRef }) => {
+  const titleSequence: (string | number)[] = [];
 
   titleList.forEach(([title, duration]) => {
-    titleSequence.push(title, duration, '', 1000);
+    titleSequence.push(title, duration, "", 1000);
   });
 
   return (
     <header>
-      <div className={styles.home}>
+      <div className={styles.home} ref={headerRef}>
         <Image
-          className={styles.leaf} 
+          className={styles.leaf}
           src={leafGraphic}
           alt="Leaf Graphic"
           width={170}
@@ -26,7 +28,7 @@ const Header: FunctionComponent = () => {
         />
         <h1 className={styles.title}>nicholas nguyen.</h1>
         <div className={styles.TypeAnimate}>
-          <TypeAnimation 
+          <TypeAnimation
             className={styles.typer}
             sequence={titleSequence}
             speed={40}
@@ -35,8 +37,9 @@ const Header: FunctionComponent = () => {
           />
         </div>
       </div>
+      <div className={styles.transition}></div>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;

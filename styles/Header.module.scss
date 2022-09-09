@@ -1,28 +1,38 @@
 .leaf {
-    width: 2in;
+  width: 2in;
 }
 
 .TypeAnimate {
-    height: 1.5in;
+  height: 1.5in;
 }
 
 .title {
-    font: bold 3em "Ubuntu Mono", monospace;
-    text-align: center;
+  font: bold 3em "Ubuntu Mono", monospace;
+  text-align: center;
 }
 
 .typer {
-    font: 2em "Ubuntu Mono", monospace;
-    text-align: center;
-    padding: 0.8em;
-    padding-top: 0.4em;
+  font: 2em "Ubuntu Mono", monospace;
+  text-align: center;
+  padding: 0.8em;
+  padding-top: 0.4em;
 }
 
 .home {
-    background-color: #e3bb19;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 247, 1),
+    rgb(255, 43, 20, 1)
+  );
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition {
+  background: linear-gradient(transparent 30%, rgb(48, 48, 48)),
+    linear-gradient(to right, rgb(255, 148, 10), rgb(255, 43, 20));
+  height: 1.5in;
 }
