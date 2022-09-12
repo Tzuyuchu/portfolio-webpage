@@ -26,7 +26,7 @@ const Block: FunctionComponent = () => {
       style={{
         backgroundColor: "green",
         height: 500,
-        width: 500,
+        width: 100,
         margin: 20,
       }}
     ></div>
